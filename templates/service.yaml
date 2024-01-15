@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: express-sqlite-charts-service
+  labels:
+    app:  express-sqlite-charts
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: express-sqlite-charts

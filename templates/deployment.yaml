@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-sqlite-charts
+  labels:
+    app: express-sqlite-charts
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: express-sqlite-charts
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: express-sqlite-charts
+    spec:
+      imagePullSecrets:
+        
+      serviceAccountName:
+      securityContext:
+      
+      containers:
+        - name: express-sqlite-charts
+          securityContext:
+        
+          image: hadilkortas/express-sqlite
+          imagePullPolicy: 
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            
+      
+      nodeSelector:
+        
+      
+      
+      affinity:
+        
+      tolerations:
+      
